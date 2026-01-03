@@ -12,7 +12,7 @@ A modern, responsive weather application built with HTML5, CSS3, and JavaScript.
 ## 📸 Screenshots
 | Main Dashboard | Mobile View |
 |---|---|
-| ![Front Page Placeholder](assets/image.png) | ![Forecast Placeholder](path/to/your/screenshot2.png) |
+| ![Front Page Placeholder](assets/image.png) | ![Forecast Placeholder](assets/Screenshot 2026-01-04 020941.png) |
 
 ## 🚀 Live Demo
 Check out the live project here: [Your GitHub Pages Link Here]
