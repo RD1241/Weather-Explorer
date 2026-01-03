@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a; /* Base dark color */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 1s ease;
+}
+
+/* --- Animated Blobs --- */
+.background-blobs {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: linear-gradient(135deg, rgba(0, 180, 219, 0.3), rgba(0, 131, 176, 0.3));
+    filter: blur(80px);
+    border-radius: 50%;
+    animation: move 20s infinite alternate;
+}
+
+.circle1 { top: -150px; left: -150px; }
+.circle2 { bottom: -150px; right: -150px; animation-duration: 30s; }
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(150px, 150px) scale(1.2); }
+}
+
+/* --- Container --- */
+.app-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    width: 95%;
+    max-width: 450px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #fff, #81d4fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Search Box --- */
+.search-box {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: #81d4fa;
+    box-shadow: 0 0 20px rgba(129, 212, 250, 0.2);
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+button {
+    background: #00b4db;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00d2ff;
+    transform: translateY(-2px);
+}
+
+/* --- Weather Content --- */
+#weather-icon {
+    width: 120px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+#temperature {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 16px;
+}
+
+/* --- Forecast --- */
+.divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 25px 0;
+}
+
+#forecast-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.forecast-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px 8px;
+    border-radius: 12px;
+    flex: 1;
+    font-size: 0.8rem;
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.forecast-card img { width: 40px; }
+
+/* --- Dynamic BG Classes --- */
+.sunny-bg { background: #0083b0; }
+.rainy-bg { background: #1e293b; }
+.cloudy-bg { background: #334155; }
+
+.hidden { display: none; }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delay for cards */
+.forecast-card:nth-child(1) { animation-delay: 0.1s; }
+.forecast-card:nth-child(2) { animation-delay: 0.2s; }
+.forecast-card:nth-child(3) { animation-delay: 0.3s; }
+.forecast-card:nth-child(4) { animation-delay: 0.4s; }
+.forecast-card:nth-child(5) { animation-delay: 0.5s; }

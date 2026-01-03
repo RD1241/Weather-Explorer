@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Explorer Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob circle1"></div>
+        <div class="blob circle2"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <h1>Weather Explorer</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Search for a city...">
+                <button id="search-btn">Search</button>
+                <button id="location-btn" title="Use My Location">📍</button>
+            </div>
+        </header>
+
+        <main id="weather-display" class="hidden">
+            <h2 id="city-name">London</h2>
+            <div class="weather-info">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <p id="temperature">20&deg;C</p>
+                <p id="description">Partly Cloudy</p>
+            </div>
+            <div class="details">
+                <div class="col">
+                    <p>Humidity</p>
+                    <b id="humidity">50%</b>
+                </div>
+                <div class="col">
+                    <p>Wind Speed</p>
+                    <b id="wind-speed">10 km/h</b>
+                </div>
+            </div>
+        </main>
+
+        <section id="forecast-container" class="hidden">
+            <div class="divider"></div>
+            <h3>5-Day Forecast</h3>
+            <div id="forecast-list">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
